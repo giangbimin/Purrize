@@ -24,3 +24,15 @@ fly open
 url: https://purrize.fly.dev/
 ```
 
+#### Test
+
+```
+rails g rspec:install
+```
+
+### Authentication
+
+```
+rails g devise:install
+rails g devise user
+```

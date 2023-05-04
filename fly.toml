@@ -7,6 +7,9 @@ mounts = []
 primary_region = "sin"
 processes = []
 
+# [deploy]
+#   release_command = "bundle exec rails db:migrate"
+
 [[services]]
   internal_port = 3000
   processes = ["app"]
