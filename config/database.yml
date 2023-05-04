@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: purrize_development
+  #username: purrize
+  #password:
+  #host: localhost
+  #port: 5432
+  #min_messages: notice
+test:
+  <<: *default
+  database: purrize_test
+#
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   production:
+#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+#
+production:
+  <<: *default
+  database: purrize_production
+  username: purrize
+  password: <%= ENV["PURRIZE_DATABASE_PASSWORD"] %>
