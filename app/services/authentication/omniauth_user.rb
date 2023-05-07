@@ -33,7 +33,7 @@ class Authentication::OmniauthUser
 
   def link_user user
     identity = new_identity
-    identity.user_id = user.uuid
+    identity.user_id = user.id
     identity.save!
     user
   end
