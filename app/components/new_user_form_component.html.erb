@@ -1,0 +1,27 @@
+<div data-controller="new-user-form-component" class="text-center">
+  <%
+    email_error = @resource.errors.full_messages_for(:email)&.first
+    password_error = @resource.errors.full_messages_for(:password)&.first
+    password_confirmation_error = @resource.errors.full_messages_for(:password_confirmation)&.first
+  %>
+  <%= form_for(@resource, as: @resource_name, url: @url) do |f| %>
+    <div class="text-left">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block border p-2 bg-white w-full h-10 focus:outline-none #{email_error.present? ? 'border-red-400' : ''} focus:border-blue-400  rounded text-sm placeholder-gray-600 placeholder-opacity-40 mt-2 text-gray-600 ", placeholder: "E-mail*"%>
+      <% if email_error.present? %>
+        <span class="inline-flex text-sm text-red-700"><%= email_error %></span>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", class:"block border p-2 bg-white w-full h-10 focus:outline-none #{ password_error.present? ? 'border-red-400' : ''} focus:border-blue-400 rounded text-sm placeholder-gray-600 placeholder-opacity-40 mt-2 text-gray-600", placeholder: "Password*" %>
+      <% if password_error.present? %>
+        <span class="inline-flex text-sm text-red-700"><%= password_error %></span>
+      <% end %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"block border p-2 bg-white w-full h-10 focus:outline-none #{password_confirmation_error.present? ? 'border-red-400 ' : ''} focus:border-blue-400 rounded text-sm placeholder-gray-600 placeholder-opacity-40 mt-2 text-gray-600", placeholder: "Confirm password*" %>
+      <% if password_confirmation_error.present? %>
+        <span class="inline-flex text-sm text-red-700"><%= password_confirmation_error %></span>
+      <% end %>
+    </div>
+    <div class="flex justify-center">
+        <p class="text-gray-600 font-semibold pt-2 w-2/3" style="font-size: 9.5px;">By clicking Agree & Join, you agree to the Website User Agreement, Privacy Policy, and Cookie Policy.</p>
+    </div>
+    <%= f.submit "Agree & Join", class: "w-80 h-9 bg-blue-500 text-sm font-semibold mt-2 rounded-sm text-gray-100 focus:outline-none hover:bg-blue-600"%>
+  <% end %>
+</div>

@@ -20,6 +20,7 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'bootsnap', require: false
 gem 'redis', '~> 5.0'
+gem "view_component", "~> 3.0"
 
 # gem 'kredis'
 # gem 'bcrypt', '~> 3.1.7'

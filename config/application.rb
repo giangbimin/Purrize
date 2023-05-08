@@ -33,5 +33,9 @@ module Purrize
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    initializer "app_assets", after: "importmap.assets" do
+      Rails.application.config.assets.paths << Rails.root.join('app')
+    end
+    config.importmap.cache_sweepers << Rails.root.join('app/components')
   end
 end
