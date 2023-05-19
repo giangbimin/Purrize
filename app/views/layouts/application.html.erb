@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/daisyui@2.14.1/dist/full.css" %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-gray-200">
+  <body class="">
+    <%= render "layouts/shared/header" %>
+    <div id="flashes" class="mb-8 absolute right-0 -top-20 w-full">
+      <%= flash_notices %>
+    </div>
+    <div id="announcement">
+      <%= render AnnouncementComponent.new("New contest available", "Sign up to get unlimited updates. No credit card required.", "Join now", "#") %>
+    </div>
     <main class="container mx-auto px-5">
-      <div id="flashes" class="mb-8 absolute right-0 -top-20 w-full">
-        <%= flash_notices %>
-      </div>
       <%= yield %>
+      <%= render "layouts/shared/footer" %>
     </main>
   </body>
 </html>

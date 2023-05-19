@@ -52,3 +52,9 @@ rails g devise:controllers users
 rails g devise:views users
 rails g model identity user_id:uuid provider:string uid:string image:string full_name:string
 ```
+
+### ViewComponent
+
+```
+  rails g component omniauthForm --stimulus
+``` 

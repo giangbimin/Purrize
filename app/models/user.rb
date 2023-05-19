@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable , omniauth_providers: PROVIDERS
   has_many :identities
+  has_one :profile
 end

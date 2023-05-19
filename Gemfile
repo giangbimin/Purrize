@@ -25,7 +25,7 @@ gem "view_component", "~> 3.0"
 # gem 'kredis'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'sassc-rails'
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
