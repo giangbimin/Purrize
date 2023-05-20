@@ -1,10 +1,6 @@
 module ApplicationHelper
   def flash_notices
-    render FlashComponent.new(flash.notice, :info) if flash.notice
-  end
-
-  def error_messages resource
-    render ErrorComponent.new(resource) if resource.errors.any?
+    render Shared::FlashComponent.new(flash.notice, :info) if flash.notice
   end
 
   def login_form(resource, resource_name)

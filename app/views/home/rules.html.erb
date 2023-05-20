@@ -19,7 +19,7 @@
 %>
 <!-- RULES -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <%= render(PageTitleComponent.new("Official Rules")) %>
+  <%= render(Shared::PageTitleComponent.new(title: "Official Rules", description: nil)) %>
   <div class="mx-auto">
     <H4>
       <strong>
@@ -28,7 +28,7 @@
     </h4>
     <div class="hs-accordion-group">
       <% rules.each_with_index do |rule, index| %>
-        <%= render(QaComponent.new(index, rule[0], rule[1])) %>
+        <%= render(Element::CollapseComponent.new(id: index, title: rule[0], description: rule[1])) %>
       <% end %>
     </div>
   </div>

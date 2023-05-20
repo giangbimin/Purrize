@@ -1,18 +1,12 @@
-<%
-  header_content = {
-    title: "Start your journey with <span class='text-blue-600'>Purrize</span>",
-    content: "Join now and become a winner of numerous exciting prizes! Take part in our exciting sweepstakes and stand a chance to win the biggest prizes, all free, Don't miss out!",
-    image_url: asset_url("winner_is.jpeg"),
-    primary_btn: {text: "Get big prizes", href: "#"},
-    secondary_btn: {text: "Create a campaign", href: "#"}
-  }
-%>
-<%= render(HeroSectionComponent.new(header_content)) %>
-
-
+<%= render(Page::HeroSectionComponent.new(title: "Start your journey with <span class='text-blue-600'>Purrize</span>",
+  description: "Join now and become a winner of numerous exciting prizes! Take part in our exciting sweepstakes and stand a chance to win the biggest prizes, all free, Don't miss out!",
+  image_url: asset_url("winner_is.jpeg"),
+  primary_btn: {text: "Get big prizes", href: "#"},
+  secondary_btn: {text: "Create a campaign", href: "#"}
+)) %>
 
 <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-8">
-  <%= render(PageTitleComponent.new(title: "Join to win", description: "Discover Exciting Opportunities to Win Prizes")) %>
+  <%= render(Shared::PageTitleComponent.new(title: "Join to win", description: "Discover Exciting Opportunities to Win Prizes")) %>
   <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
     <% 7.times do %>
       <%= render(ProductCardComponent.new(asset_path("product_image.jpeg"))) %>

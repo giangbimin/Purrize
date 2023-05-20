@@ -1,12 +1,12 @@
 <!-- FAQ -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <%= render(PageTitleComponent.new(title: "Your questions, answered", description: "Answers to the most frequently asked questions.")) %>
+  <%= render(Shared::PageTitleComponent.new(title: "Your questions, answered", description: "Answers to the most frequently asked questions.")) %>
   <div class="max-w-2xl mx-auto">
     <div class="hs-accordion-group">
       <% @faqs.each do |faq| %>
-        <%= render(QaComponent.new(faq[0], faq[1], faq[2])) %>
+        <%= render(Element::CollapseComponent.new(id: faq[0], title: faq[1], description: faq[2])) %>
       <% end %>
     </div>
   </div>
 </div>
-<!-- End FAQ -->
+<!-- End FAQ -->Element::CollapseComponent

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe PageTitleComponent, type: :component do
+RSpec.describe BottomNavigation::MenuComponent, type: :component do
   pending "add some examples to (or delete) #{__FILE__}"
 
   # it "renders something useful" do
