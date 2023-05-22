@@ -59,7 +59,7 @@
           </div>
           <div class="ml-3">
             <span class= "text-sm dark:text-white" >
-              I accept the <%= link_to "Terms and Conditions", terms_of_service_path, target: "_blank", class: "text-blue-600 decoration-2 hover:underline font-medium" %>
+             <%= t(".registration_form_component.agree") %> <%= link_to t(".registration_form_component.terms_of_service"), terms_of_service_path, target: "_blank", class: "text-blue-600 decoration-2 hover:underline font-medium" %>
             </span>
           </div>
         <% end %>
@@ -67,7 +67,7 @@
       </div>
       <!-- End Checkbox -->
 
-      <%= f.submit "Register", class: "py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"%>
+      <%= f.submit t(".registration_form_component.register"), class: "py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"%>
     </div>
   <% end %>
 </div>

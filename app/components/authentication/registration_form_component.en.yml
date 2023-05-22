@@ -1,0 +1,7 @@
+en:
+  registration_form_component:
+    email: "Email"
+    password: "Password"
+    agree: "I accept the"
+    terms_of_service: "Terms and Conditions"
+    register: "Register"

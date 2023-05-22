@@ -1,0 +1,6 @@
+en:
+  login_form_component:
+    email: "Email"
+    password: "Password"
+    remember_me: "Remember me"
+    login: "Log in"
