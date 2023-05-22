@@ -1,6 +1,6 @@
 <div data-controller="shared--announcement-component">
   <!-- Announcement Banner -->
-  <div class="bg-gradient-to-r from-red-500 via-purple-400 to-blue-500">
+  <div class="bg-gradient-to-r from-red-500 via-purple-400 to-blue-500 absolute w-full opacity-80 z-40">
     <div class="max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto">
       <!-- Grid -->
       <div class="grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2">
@@ -13,7 +13,6 @@
           </p>
         </div>
         <!-- End Col -->
-
         <div class="mt-3 text-center md:text-left md:flex md:justify-end md:items-center">
           <a class="py-3 px-6 inline-flex justify-center items-center gap-2 rounded-full font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm" href="<%= @href %>">
             <%= @action %>
@@ -24,5 +23,5 @@
       <!-- End Grid -->
     </div>
   </div>
-<!-- End Announcement Banner -->
+  <!-- End Announcement Banner -->
 </div>

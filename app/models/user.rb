@@ -8,4 +8,6 @@ class User < ApplicationRecord
          :omniauthable , omniauth_providers: PROVIDERS
   has_many :identities
   has_one :profile
+
+  validates_acceptance_of :tos_agreement, allow_nil: false, on: :create
 end
