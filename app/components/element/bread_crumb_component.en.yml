@@ -1,0 +1,9 @@
+en:
+  bread_crumb_component:
+    home: "Home"
+    profiles: "Profiles"
+    basic: "Basic"
+    links: "Links"
+    notifications: "Notifications"
+    password: "password"
+    sessions: "sessions"

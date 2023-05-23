@@ -1,0 +1,8 @@
+en:
+  general_information_component:
+    full_name: "Full name"
+    tel: "Phone number"
+    dob: "Date of birth"
+    zip: "Zip code"
+    address: "Address"
+    basic_information: "About"

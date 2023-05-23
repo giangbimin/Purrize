@@ -17,6 +17,11 @@ class HomeController < ApplicationController
   def privacy_policy
   end
 
+  def profile
+  end
+
+  def notification_settings
+  end
   def faq
     @faqs = [
       [1, "Can I cancel at anytime?", "Yes, you can cancel anytime no questions are asked while you cancel but we would highly appreciate if you will give us some feedback."],

@@ -1,0 +1,6 @@
+en:
+  avatar_component:
+    avatar: "Profile picture"
+    format: "JPEG, JPG, GIF or PNG. Max size of 5 megabytes"
+    upload: "Upload picture"
+    Delete: "Delete"

@@ -3,6 +3,7 @@ git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '3.1.1'
 
+gem 'active_storage_validations', '~> 1.0', '>= 1.0.3'
 gem 'devise', '~> 4.9.2'
 gem 'omniauth', '~> 2.1.1'
 gem 'omniauth-facebook', '~> 9.0'

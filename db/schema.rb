@@ -56,10 +56,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_095428) do
   end
 
   create_table "profiles", id: false, force: :cascade do |t|
-    t.uuid "user_id"
+    t.uuid "user_id", null: false
+    t.string "full_name"
     t.string "tel"
+    t.string "zip"
     t.text "basic_information"
     t.boolean "is_verified"
+    t.integer "gender"
+    t.date "dob"
+    t.text "address"
+    t.integer "timezone", default: 0
+    t.integer "language", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

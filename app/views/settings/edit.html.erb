@@ -1,0 +1,16 @@
+<div class="grid grid-cols-1 px-4 pt-6 xl:grid-cols-3 xl:gap-4 dark:bg-gray-900">
+  <div class="mb-4 col-span-full xl:mb-2">
+    <%= render Element::BreadCrumbComponent.new(links: [{title: :user, href: "#", active: false}, {title: :settings, href: "#", active: true}]) %>
+    <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Account & Sessions settings</h1>
+  </div>
+
+  <div class="col-span-full xl:col-auto">
+    <%= render Profile::LinkAccountComponent.new() %>
+  </div>
+  <div class="col-span-2">
+    <%= form_for(@user, url: settings_sessions_path, method: :put) do |form| %>
+			<%= render Profile::AccountInformationComponent.new(form: form, user: @user) %>
+			<%= render Profile::SessionManagementComponent.new() %>
+     <% end %>
+  </div>
+</div>
