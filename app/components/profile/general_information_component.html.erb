@@ -1,30 +1,61 @@
  <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800"
   data-controller="profile--general-information-component">
   <h3 class="mb-4 text-xl font-semibold dark:text-white">General information</h3>
-  <div class="grid grid-cols-6 gap-6">
-    <div class="col-span-6 sm:col-span-3">
-      <%= @form.label :full_name, t(".general_information_component.full_name"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.text_field :full_name, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "Full name*", required: true %>
+  <%= form_for(@profile, url: settings_profiles_path, method: :put, html: {"data-profile--general-information-component-target": "form"}) do |form| %>
+    <div class="grid grid-cols-6 gap-6">
+      <div class="col-span-6 sm:col-span-3">
+        <%= form.label :full_name, t(".general_information_component.full_name"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.text_field :full_name,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "Full name*",
+          required: true,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
+      <div class="col-span-6 sm:col-span-3">
+        <%= form.label :tel, t(".general_information_component.tel"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.phone_field :tel,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "e.g. +(12)3456 789",
+          required: true,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
+      <div class="col-span-6 sm:col-span-3">
+        <%= form.label :dob, t(".general_information_component.dob"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.date_field :dob,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "15/08/1990",
+          required: true,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
+      <div class="col-span-6 sm:col-span-3">
+        <%= form.label :zip, t(".general_information_component.zip"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.text_field :zip,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "060-000",
+          required: false,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
+      <div class="col-span-6">
+        <%= form.label :address, t(".general_information_component.address"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.text_area :address, rows: 2,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "",
+          required: false,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
+      <div class="col-span-6">
+        <%= form.label :basic_information, t(".general_information_component.basic_information"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= form.text_area :basic_information, rows: 5,
+          class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500",
+          placeholder: "", required: false,
+          data: { action: "change->profile--general-information-component#autoSave"}
+        %>
+      </div>
     </div>
-    <div class="col-span-6 sm:col-span-3">
-      <%= @form.label :tel, t(".general_information_component.tel"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.phone_field :tel, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "e.g. +(12)3456 789", required: true %>
-    </div>
-    <div class="col-span-6 sm:col-span-3">
-      <%= @form.label :dob, t(".general_information_component.dob"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.date_field :dob, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "15/08/1990", required: true %>
-    </div>
-    <div class="col-span-6 sm:col-span-3">
-      <%= @form.label :zip, t(".general_information_component.zip"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.text_field :zip, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "060-000", required: false %>
-    </div>
-    <div class="col-span-6">
-      <%= @form.label :address, t(".general_information_component.address"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.text_area :address, rows: 2, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "", required: false %>
-    </div>
-    <div class="col-span-6">
-      <%= @form.label :basic_information, t(".general_information_component.basic_information"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= @form.text_area :basic_information, rows: 5, class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500", placeholder: "", required: false %>
-    </div>
-  </div>
+  <% end %>
 </div>

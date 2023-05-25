@@ -10,8 +10,6 @@
   </div>
 
   <div class="col-span-2">
-    <%= form_for(@profile, url: settings_profiles_path, method: :put) do |form| %>
-			<%= render Profile::GeneralInformationComponent.new(form: form, profile: @profile) %>
-     <% end %>
+		<%= render Profile::GeneralInformationComponent.new(profile: @profile) %>
   </div>
 </div>

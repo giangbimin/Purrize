@@ -1,7 +1,8 @@
 import { Application } from "@hotwired/stimulus"
 import * as ActiveStorage from "@rails/activestorage"
-import "preline";
-import 'flowbite';
+import "lodash"
+import "preline"
+import "flowbite"
 const application = Application.start()
 ActiveStorage.start()
 application.debug = false
