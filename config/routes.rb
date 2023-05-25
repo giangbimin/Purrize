@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  get "settings/profiles", to: "profiles#edit"
-  put "settings/profiles", to: "profiles#update"
-  get "settings/sessions", to: "settings#edit"
-  put "settings/sessions", to: "settings#update"
+  # get "settings/profiles", to: "profiles#edit"
+  # put "settings/profiles", to: "profiles#update"
+  # put "settings/profiles/avatar", to: "profiles#update_avatar"
+  # delete "settings/profiles/avatar", to: "profiles#delete_avatar"
+  resource :settings do
+    resource :sessions, only: [:edit, :update]
+    resource :profiles, only: [:edit, :update] do
+      member do
+        put :update_gmt
+        put :update_avatar
+        delete :delete_avatar
+      end
+    end
+  end
   root 'home#index'
   get 'faq', to: 'home#faq'
   get 'connect', to: 'home#connect'

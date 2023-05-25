@@ -5,10 +5,8 @@
   </div>
 
   <div class="col-span-full xl:col-auto">
-    <%= form_for(@profile, url: settings_profiles_path, method: :put) do |form| %>
-      <%= render Profile::AvatarComponent.new(form: form, current_avatar: @profile.avatar.url || asset_path("default_avatar.jpeg")) %>
-      <%= render Profile::LanguageTimezoneComponent.new(form: form, profile: @profile) %>
-    <% end %>
+    <%= render Profile::AvatarComponent.new(profile: @profile) %>
+    <%= render Profile::LanguageTimezoneComponent.new(profile: @profile) %>
   </div>
 
   <div class="col-span-2">

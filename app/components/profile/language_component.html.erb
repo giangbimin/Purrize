@@ -1,0 +1,16 @@
+<div class="mb-4" data-controller="profile--language-component">
+  <%= form_for(@profile, url: update_gmt_settings_profiles_path, method: :put, html: {"data-profile--language-component-target": "form"}) do |form| %>
+    <%= form.label :language, t(".language_component.select_language"), class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.select :language,
+      options_for_select(@languages, @profile.language),
+      {
+        selected: @profile.language
+      },
+      {
+        "data-profile--language-component-target": "input",
+        "data-action": "change->profile--language-component#submitForm",
+        class: "bg-gray-50 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+      }
+    %>
+  <% end %>
+</div>
